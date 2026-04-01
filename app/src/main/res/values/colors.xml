@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="brand_primary">#2D8CFF</color>
+    <color name="brand_on_primary">#FFFFFFFF</color>
+    <color name="brand_secondary">#3FBF8F</color>
+    <color name="brand_background">#F4FAFD</color>
+    <color name="brand_surface">#FFFFFFFF</color>
+    <color name="brand_primary_container">#DCEFFF</color>
+    <color name="brand_on_primary_container">#143A66</color>
+    <color name="brand_surface_variant">#EAF3FA</color>
+    <color name="brand_outline">#B9C7D1</color>
+    <color name="brand_on_background">#20303A</color>
+    <color name="brand_on_surface">#20303A</color>
+
+    <color name="status_expired_fg">#D64545</color>
+    <color name="status_expired_bg">#FDECEC</color>
+    <color name="status_today_fg">#F08C00</color>
+    <color name="status_today_bg">#FFF1E0</color>
+    <color name="status_soon_fg">#D6A400</color>
+    <color name="status_soon_bg">#FFF7DB</color>
+    <color name="status_safe_fg">#2F9E44</color>
+    <color name="status_safe_bg">#EAF7EE</color>
+    <color name="status_done_fg">#7A8894</color>
+    <color name="status_done_bg">#EEF2F5</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

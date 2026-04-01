@@ -1,3 +1,118 @@
 <resources>
-    <string name="app_name">refrigerator reminder</string>
+    <string name="app_name">냉장고 알리미</string>
+    <string name="title_home">홈</string>
+    <string name="title_list">전체 목록</string>
+    <string name="title_add">식재료 등록</string>
+    <string name="title_settings">설정</string>
+
+    <string name="nav_home">홈</string>
+    <string name="nav_list">목록</string>
+    <string name="nav_add">등록</string>
+    <string name="menu_settings">설정</string>
+
+    <string name="summary_expired">만료</string>
+    <string name="summary_due_soon">임박</string>
+    <string name="home_section_due">지금 확인할 식재료</string>
+    <string name="home_empty_title">등록된 식재료가 없어요</string>
+    <string name="home_empty_subtitle">첫 식재료를 추가하면 위험한 항목부터 빠르게 볼 수 있어요.</string>
+    <string name="home_empty_action">식재료 추가</string>
+
+    <string name="list_empty_title">표시할 식재료가 없어요</string>
+    <string name="list_empty_subtitle">검색어나 필터를 조정해보세요.</string>
+    <string name="label_search">식재료 검색</string>
+    <string name="hint_search_items">이름으로 검색</string>
+    <string name="label_sort">정렬</string>
+    <string name="label_category">카테고리</string>
+    <string name="label_storage">보관 위치</string>
+    <string name="label_status">상태</string>
+    <string name="filter_all">전체</string>
+    <string name="filter_active">활성</string>
+    <string name="sort_expiry">임박순</string>
+    <string name="sort_name">이름순</string>
+    <string name="sort_created">등록순</string>
+
+    <string name="storage_fridge">냉장</string>
+    <string name="storage_freezer">냉동</string>
+    <string name="storage_room">실온</string>
+
+    <string name="category_vegetable">채소</string>
+    <string name="category_fruit">과일</string>
+    <string name="category_dairy">유제품</string>
+    <string name="category_meat">육류</string>
+    <string name="category_seafood">해산물</string>
+    <string name="category_drink">음료</string>
+    <string name="category_side_dish">반찬</string>
+    <string name="category_sauce">소스</string>
+    <string name="category_etc">기타</string>
+
+    <string name="status_expired">만료</string>
+    <string name="status_today">오늘까지</string>
+    <string name="status_soon">임박</string>
+    <string name="status_safe">안전</string>
+    <string name="status_consumed">소비 완료</string>
+    <string name="status_discarded">폐기</string>
+
+    <string name="edit_name_label">식재료명</string>
+    <string name="edit_name_hint">예: 양파, 우유, 달걀</string>
+    <string name="edit_suggestions_label">추천 식재료</string>
+    <string name="edit_expiry_label">기한</string>
+    <string name="edit_quantity_label">수량</string>
+    <string name="edit_quantity_hint">예: 2개, 1팩, 500ml</string>
+    <string name="edit_note_label">메모</string>
+    <string name="edit_note_hint">메모를 적어두면 나중에 정리할 때 더 편해요.</string>
+    <string name="quick_today">오늘</string>
+    <string name="quick_tomorrow">내일</string>
+    <string name="quick_plus_three">+3일</string>
+    <string name="quick_plus_seven">+7일</string>
+    <string name="button_select_date">직접 선택</string>
+    <string name="button_save">저장</string>
+    <string name="button_delete">삭제</string>
+    <string name="button_manage">관리</string>
+    <string name="button_undo">실행 취소</string>
+
+    <string name="settings_notification_title">만료 임박 알림</string>
+    <string name="settings_notification_desc">하루 한 번 기한이 지난 식재료와 임박한 항목을 요약해서 알려줍니다.</string>
+    <string name="settings_lead_days_title">알림 기준일</string>
+    <string name="settings_time_title">알림 시간</string>
+    <string name="settings_time_button">시간 선택</string>
+    <string name="lead_days_format">%1$d일 전</string>
+
+    <string name="notification_channel_name">기한 알림</string>
+    <string name="notification_channel_description">식재료 기한 임박 항목을 매일 알려줍니다.</string>
+    <string name="notification_summary_title">오늘 확인할 식재료가 있어요</string>
+    <string name="notification_summary_text">만료 %1$d개, 임박 %2$d개를 확인하세요.</string>
+
+    <string name="suggestion_source_user">내 항목</string>
+    <string name="suggestion_source_default">기본 식재료</string>
+    <string name="suggestion_source_direct">직접 입력</string>
+    <string name="suggestion_direct_add">직접 입력: %1$s</string>
+    <string name="suggestion_direct_add_subtitle">원하는 이름 그대로 추가합니다.</string>
+
+    <string name="item_expiry_value">기한 %1$s</string>
+    <string name="item_quantity_value">수량 %1$s</string>
+    <string name="item_note_value">메모 %1$s</string>
+    <string name="item_days_today">D-0</string>
+    <string name="item_days_remaining">D-%1$d</string>
+    <string name="item_days_overdue">D+%1$d</string>
+
+    <string name="message_item_saved">식재료를 저장했어요.</string>
+    <string name="message_item_deleted">식재료를 삭제했어요.</string>
+    <string name="message_item_consumed">소비 완료로 처리했어요.</string>
+    <string name="message_item_discarded">폐기로 처리했어요.</string>
+    <string name="message_permission_denied">알림 권한이 없어 요약 알림을 켤 수 없어요.</string>
+    <string name="message_name_required">식재료명을 입력하세요.</string>
+
+    <string name="action_edit">수정</string>
+    <string name="action_consume">소비 완료</string>
+    <string name="action_discard">폐기</string>
+    <string name="action_delete">삭제</string>
+
+    <string name="status_filter_all">전체</string>
+    <string name="status_filter_active">활성</string>
+    <string name="status_filter_expired">만료</string>
+    <string name="status_filter_today">오늘까지</string>
+    <string name="status_filter_soon">임박</string>
+    <string name="status_filter_safe">안전</string>
+    <string name="status_filter_consumed">소비 완료</string>
+    <string name="status_filter_discarded">폐기</string>
 </resources>
