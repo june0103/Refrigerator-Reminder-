@@ -1,152 +1,1652 @@
-[
-  {"id":"onion","source":"MFDS","rawName":"양파","displayName":"양파","aliases":[],"category":"VEGETABLE","searchPriority":1},
-  {"id":"green_onion","source":"MFDS","rawName":"대파","displayName":"대파","aliases":[],"category":"VEGETABLE","searchPriority":2},
-  {"id":"egg","source":"SEED","rawName":"계란","displayName":"계란","aliases":["달걀"],"category":"ETC","searchPriority":3},
-  {"id":"milk","source":"SEED","rawName":"우유","displayName":"우유","aliases":[],"category":"DAIRY","searchPriority":4},
-  {"id":"garlic","source":"MFDS","rawName":"마늘","displayName":"마늘","aliases":[],"category":"VEGETABLE","searchPriority":5},
-  {"id":"potato","source":"MFDS","rawName":"감자","displayName":"감자","aliases":[],"category":"VEGETABLE","searchPriority":6},
-  {"id":"carrot","source":"MFDS","rawName":"당근","displayName":"당근","aliases":[],"category":"VEGETABLE","searchPriority":7},
-  {"id":"cabbage","source":"MFDS","rawName":"양배추","displayName":"양배추","aliases":[],"category":"VEGETABLE","searchPriority":8},
-  {"id":"cucumber","source":"MFDS","rawName":"오이","displayName":"오이","aliases":[],"category":"VEGETABLE","searchPriority":9},
-  {"id":"tofu","source":"SEED","rawName":"두부","displayName":"두부","aliases":[],"category":"SIDE_DISH","searchPriority":10},
-  {"id":"kimchi","source":"SEED","rawName":"김치","displayName":"김치","aliases":[],"category":"SIDE_DISH","searchPriority":11},
-  {"id":"pork","source":"MFDS","rawName":"돼지고기","displayName":"돼지고기","aliases":["돼지"],"category":"MEAT","searchPriority":12},
-  {"id":"beef","source":"MFDS","rawName":"소고기","displayName":"소고기","aliases":["쇠고기"],"category":"MEAT","searchPriority":13},
-  {"id":"chicken","source":"MFDS","rawName":"닭고기","displayName":"닭고기","aliases":[],"category":"MEAT","searchPriority":14},
-  {"id":"apple","source":"MFDS","rawName":"사과","displayName":"사과","aliases":[],"category":"FRUIT","searchPriority":15},
-  {"id":"banana","source":"MFDS","rawName":"바나나","displayName":"바나나","aliases":[],"category":"FRUIT","searchPriority":16},
-  {"id":"tomato","source":"MFDS","rawName":"토마토","displayName":"토마토","aliases":[],"category":"VEGETABLE","searchPriority":17},
-  {"id":"mushroom_enoki","source":"MFDS","rawName":"팽이버섯","displayName":"팽이버섯","aliases":[],"category":"VEGETABLE","searchPriority":18},
-  {"id":"soy_sauce","source":"SEED","rawName":"간장","displayName":"간장","aliases":[],"category":"SAUCE","searchPriority":19},
-  {"id":"gochujang","source":"SEED","rawName":"고추장","displayName":"고추장","aliases":[],"category":"SAUCE","searchPriority":20},
-  {"id":"doenjang","source":"SEED","rawName":"된장","displayName":"된장","aliases":[],"category":"SAUCE","searchPriority":21},
-  {"id":"yogurt","source":"SEED","rawName":"요거트","displayName":"요거트","aliases":["요구르트"],"category":"DAIRY","searchPriority":22},
-  {"id":"cheese","source":"SEED","rawName":"치즈","displayName":"치즈","aliases":[],"category":"DAIRY","searchPriority":23},
-  {"id":"butter","source":"SEED","rawName":"버터","displayName":"버터","aliases":[],"category":"DAIRY","searchPriority":24},
-  {"id":"ham","source":"SEED","rawName":"햄","displayName":"햄","aliases":["슬라이스햄"],"category":"SIDE_DISH","searchPriority":25},
-  {"id":"fishcake","source":"SEED","rawName":"어묵","displayName":"어묵","aliases":[],"category":"SIDE_DISH","searchPriority":26},
-  {"id":"bread","source":"SEED","rawName":"식빵","displayName":"식빵","aliases":[],"category":"ETC","searchPriority":27},
-  {"id":"rice","source":"SEED","rawName":"쌀","displayName":"쌀","aliases":[],"category":"ETC","searchPriority":28},
-  {"id":"salt","source":"SEED","rawName":"소금","displayName":"소금","aliases":[],"category":"SAUCE","searchPriority":29},
-  {"id":"sugar","source":"SEED","rawName":"설탕","displayName":"설탕","aliases":[],"category":"SAUCE","searchPriority":30},
-  {"id":"sesame_oil","source":"SEED","rawName":"참기름","displayName":"참기름","aliases":[],"category":"SAUCE","searchPriority":31},
-  {"id":"olive_oil","source":"SEED","rawName":"올리브유","displayName":"올리브유","aliases":[],"category":"SAUCE","searchPriority":32},
-  {"id":"perilla_oil","source":"SEED","rawName":"들기름","displayName":"들기름","aliases":[],"category":"SAUCE","searchPriority":33},
-  {"id":"vinegar","source":"SEED","rawName":"식초","displayName":"식초","aliases":[],"category":"SAUCE","searchPriority":34},
-  {"id":"ketchup","source":"SEED","rawName":"케첩","displayName":"케첩","aliases":[],"category":"SAUCE","searchPriority":35},
-  {"id":"mayonnaise","source":"SEED","rawName":"마요네즈","displayName":"마요네즈","aliases":[],"category":"SAUCE","searchPriority":36},
-  {"id":"ssamjang","source":"SEED","rawName":"쌈장","displayName":"쌈장","aliases":[],"category":"SAUCE","searchPriority":37},
-  {"id":"gochugaru","source":"SEED","rawName":"고춧가루","displayName":"고춧가루","aliases":[],"category":"SAUCE","searchPriority":38},
-  {"id":"pepper","source":"SEED","rawName":"후추","displayName":"후추","aliases":[],"category":"SAUCE","searchPriority":39},
-  {"id":"oyster_sauce","source":"SEED","rawName":"굴소스","displayName":"굴소스","aliases":[],"category":"SAUCE","searchPriority":40},
-  {"id":"mirin","source":"SEED","rawName":"미림","displayName":"미림","aliases":[],"category":"SAUCE","searchPriority":41},
-  {"id":"cooking_wine","source":"SEED","rawName":"맛술","displayName":"맛술","aliases":[],"category":"SAUCE","searchPriority":42},
-  {"id":"dressing","source":"SEED","rawName":"샐러드드레싱","displayName":"샐러드드레싱","aliases":["드레싱"],"category":"SAUCE","searchPriority":43},
-  {"id":"honey_mustard","source":"SEED","rawName":"허니머스타드","displayName":"허니머스타드","aliases":["머스타드"],"category":"SAUCE","searchPriority":44},
-  {"id":"sweet_potato","source":"MFDS","rawName":"고구마","displayName":"고구마","aliases":[],"category":"VEGETABLE","searchPriority":45},
-  {"id":"scallion","source":"MFDS","rawName":"쪽파","displayName":"쪽파","aliases":[],"category":"VEGETABLE","searchPriority":46},
-  {"id":"ginger","source":"MFDS","rawName":"생강","displayName":"생강","aliases":[],"category":"VEGETABLE","searchPriority":47},
-  {"id":"radish","source":"MFDS","rawName":"무","displayName":"무","aliases":[],"category":"VEGETABLE","searchPriority":48},
-  {"id":"napa_cabbage","source":"MFDS","rawName":"배추","displayName":"배추","aliases":[],"category":"VEGETABLE","searchPriority":49},
-  {"id":"broccoli","source":"MFDS","rawName":"브로콜리","displayName":"브로콜리","aliases":[],"category":"VEGETABLE","searchPriority":50},
-  {"id":"cauliflower","source":"MFDS","rawName":"콜리플라워","displayName":"콜리플라워","aliases":[],"category":"VEGETABLE","searchPriority":51},
-  {"id":"spinach","source":"MFDS","rawName":"시금치","displayName":"시금치","aliases":[],"category":"VEGETABLE","searchPriority":52},
-  {"id":"lettuce","source":"MFDS","rawName":"상추","displayName":"상추","aliases":[],"category":"VEGETABLE","searchPriority":53},
-  {"id":"perilla_leaf","source":"MFDS","rawName":"깻잎","displayName":"깻잎","aliases":[],"category":"VEGETABLE","searchPriority":54},
-  {"id":"zucchini","source":"MFDS","rawName":"애호박","displayName":"애호박","aliases":[],"category":"VEGETABLE","searchPriority":55},
-  {"id":"pumpkin","source":"MFDS","rawName":"단호박","displayName":"단호박","aliases":[],"category":"VEGETABLE","searchPriority":56},
-  {"id":"eggplant","source":"MFDS","rawName":"가지","displayName":"가지","aliases":[],"category":"VEGETABLE","searchPriority":57},
-  {"id":"paprika","source":"MFDS","rawName":"파프리카","displayName":"파프리카","aliases":[],"category":"VEGETABLE","searchPriority":58},
-  {"id":"bell_pepper","source":"MFDS","rawName":"피망","displayName":"피망","aliases":[],"category":"VEGETABLE","searchPriority":59},
-  {"id":"chili","source":"MFDS","rawName":"고추","displayName":"고추","aliases":[],"category":"VEGETABLE","searchPriority":60},
-  {"id":"cherry_tomato","source":"MFDS","rawName":"방울토마토","displayName":"방울토마토","aliases":[],"category":"VEGETABLE","searchPriority":61},
-  {"id":"oyster_mushroom","source":"MFDS","rawName":"느타리버섯","displayName":"느타리버섯","aliases":[],"category":"VEGETABLE","searchPriority":62},
-  {"id":"king_oyster_mushroom","source":"MFDS","rawName":"새송이버섯","displayName":"새송이버섯","aliases":[],"category":"VEGETABLE","searchPriority":63},
-  {"id":"shiitake","source":"MFDS","rawName":"표고버섯","displayName":"표고버섯","aliases":[],"category":"VEGETABLE","searchPriority":64},
-  {"id":"bean_sprouts","source":"MFDS","rawName":"콩나물","displayName":"콩나물","aliases":[],"category":"VEGETABLE","searchPriority":65},
-  {"id":"mung_bean_sprouts","source":"MFDS","rawName":"숙주","displayName":"숙주","aliases":["숙주나물"],"category":"VEGETABLE","searchPriority":66},
-  {"id":"corn","source":"MFDS","rawName":"옥수수","displayName":"옥수수","aliases":[],"category":"VEGETABLE","searchPriority":67},
-  {"id":"pear","source":"MFDS","rawName":"배","displayName":"배","aliases":[],"category":"FRUIT","searchPriority":68},
-  {"id":"tangerine","source":"MFDS","rawName":"귤","displayName":"귤","aliases":[],"category":"FRUIT","searchPriority":69},
-  {"id":"orange","source":"MFDS","rawName":"오렌지","displayName":"오렌지","aliases":[],"category":"FRUIT","searchPriority":70},
-  {"id":"lemon","source":"MFDS","rawName":"레몬","displayName":"레몬","aliases":[],"category":"FRUIT","searchPriority":71},
-  {"id":"grape","source":"MFDS","rawName":"포도","displayName":"포도","aliases":[],"category":"FRUIT","searchPriority":72},
-  {"id":"strawberry","source":"MFDS","rawName":"딸기","displayName":"딸기","aliases":[],"category":"FRUIT","searchPriority":73},
-  {"id":"blueberry","source":"MFDS","rawName":"블루베리","displayName":"블루베리","aliases":[],"category":"FRUIT","searchPriority":74},
-  {"id":"kiwi","source":"MFDS","rawName":"키위","displayName":"키위","aliases":[],"category":"FRUIT","searchPriority":75},
-  {"id":"peach","source":"MFDS","rawName":"복숭아","displayName":"복숭아","aliases":[],"category":"FRUIT","searchPriority":76},
-  {"id":"plum","source":"MFDS","rawName":"자두","displayName":"자두","aliases":[],"category":"FRUIT","searchPriority":77},
-  {"id":"watermelon","source":"MFDS","rawName":"수박","displayName":"수박","aliases":[],"category":"FRUIT","searchPriority":78},
-  {"id":"melon","source":"MFDS","rawName":"멜론","displayName":"멜론","aliases":[],"category":"FRUIT","searchPriority":79},
-  {"id":"pineapple","source":"MFDS","rawName":"파인애플","displayName":"파인애플","aliases":[],"category":"FRUIT","searchPriority":80},
-  {"id":"mango","source":"MFDS","rawName":"망고","displayName":"망고","aliases":[],"category":"FRUIT","searchPriority":81},
-  {"id":"avocado","source":"MFDS","rawName":"아보카도","displayName":"아보카도","aliases":[],"category":"FRUIT","searchPriority":82},
-  {"id":"persimmon","source":"MFDS","rawName":"감","displayName":"감","aliases":[],"category":"FRUIT","searchPriority":83},
-  {"id":"greek_yogurt","source":"SEED","rawName":"그릭요거트","displayName":"그릭요거트","aliases":[],"category":"DAIRY","searchPriority":84},
-  {"id":"mozzarella","source":"SEED","rawName":"모짜렐라치즈","displayName":"모짜렐라치즈","aliases":["모짜렐라"],"category":"DAIRY","searchPriority":85},
-  {"id":"cheddar","source":"SEED","rawName":"체다치즈","displayName":"체다치즈","aliases":["체다"],"category":"DAIRY","searchPriority":86},
-  {"id":"cream","source":"SEED","rawName":"생크림","displayName":"생크림","aliases":[],"category":"DAIRY","searchPriority":87},
-  {"id":"cream_cheese","source":"SEED","rawName":"크림치즈","displayName":"크림치즈","aliases":[],"category":"DAIRY","searchPriority":88},
-  {"id":"soft_tofu","source":"SEED","rawName":"연두부","displayName":"연두부","aliases":[],"category":"SIDE_DISH","searchPriority":89},
-  {"id":"bacon","source":"SEED","rawName":"베이컨","displayName":"베이컨","aliases":[],"category":"MEAT","searchPriority":90},
-  {"id":"sausage","source":"SEED","rawName":"소시지","displayName":"소시지","aliases":[],"category":"MEAT","searchPriority":91},
-  {"id":"chicken_breast","source":"MFDS","rawName":"닭가슴살","displayName":"닭가슴살","aliases":[],"category":"MEAT","searchPriority":92},
-  {"id":"duck","source":"MFDS","rawName":"오리고기","displayName":"오리고기","aliases":[],"category":"MEAT","searchPriority":93},
-  {"id":"minced_beef","source":"MFDS","rawName":"다진소고기","displayName":"다진소고기","aliases":[],"category":"MEAT","searchPriority":94},
-  {"id":"minced_pork","source":"MFDS","rawName":"다진돼지고기","displayName":"다진돼지고기","aliases":[],"category":"MEAT","searchPriority":95},
-  {"id":"pork_belly","source":"MFDS","rawName":"삼겹살","displayName":"삼겹살","aliases":[],"category":"MEAT","searchPriority":96},
-  {"id":"pork_neck","source":"MFDS","rawName":"목살","displayName":"목살","aliases":[],"category":"MEAT","searchPriority":97},
-  {"id":"beef_bulgogi","source":"MFDS","rawName":"불고기용소고기","displayName":"불고기용소고기","aliases":["불고기소고기"],"category":"MEAT","searchPriority":98},
-  {"id":"pork_bulgogi","source":"MFDS","rawName":"불고기용돼지고기","displayName":"불고기용돼지고기","aliases":["불고기돼지고기"],"category":"MEAT","searchPriority":99},
-  {"id":"shrimp","source":"MFDS","rawName":"새우","displayName":"새우","aliases":[],"category":"SEAFOOD","searchPriority":100},
-  {"id":"squid","source":"MFDS","rawName":"오징어","displayName":"오징어","aliases":[],"category":"SEAFOOD","searchPriority":101},
-  {"id":"octopus","source":"MFDS","rawName":"문어","displayName":"문어","aliases":[],"category":"SEAFOOD","searchPriority":102},
-  {"id":"salmon","source":"MFDS","rawName":"연어","displayName":"연어","aliases":[],"category":"SEAFOOD","searchPriority":103},
-  {"id":"tuna","source":"MFDS","rawName":"참치","displayName":"참치","aliases":[],"category":"SEAFOOD","searchPriority":104},
-  {"id":"mackerel","source":"MFDS","rawName":"고등어","displayName":"고등어","aliases":[],"category":"SEAFOOD","searchPriority":105},
-  {"id":"cutlassfish","source":"MFDS","rawName":"갈치","displayName":"갈치","aliases":[],"category":"SEAFOOD","searchPriority":106},
-  {"id":"clam","source":"MFDS","rawName":"조개","displayName":"조개","aliases":[],"category":"SEAFOOD","searchPriority":107},
-  {"id":"littleneck_clam","source":"MFDS","rawName":"바지락","displayName":"바지락","aliases":[],"category":"SEAFOOD","searchPriority":108},
-  {"id":"mussel","source":"MFDS","rawName":"홍합","displayName":"홍합","aliases":[],"category":"SEAFOOD","searchPriority":109},
-  {"id":"anchovy","source":"MFDS","rawName":"멸치","displayName":"멸치","aliases":[],"category":"SEAFOOD","searchPriority":110},
-  {"id":"pollack","source":"MFDS","rawName":"명태","displayName":"명태","aliases":[],"category":"SEAFOOD","searchPriority":111},
-  {"id":"crab","source":"MFDS","rawName":"게","displayName":"게","aliases":[],"category":"SEAFOOD","searchPriority":112},
-  {"id":"oyster","source":"MFDS","rawName":"굴","displayName":"굴","aliases":[],"category":"SEAFOOD","searchPriority":113},
-  {"id":"dumpling","source":"SEED","rawName":"만두","displayName":"만두","aliases":[],"category":"SIDE_DISH","searchPriority":114},
-  {"id":"rice_cake","source":"SEED","rawName":"떡","displayName":"떡","aliases":[],"category":"SIDE_DISH","searchPriority":115},
-  {"id":"rice_cake_soup","source":"SEED","rawName":"떡국떡","displayName":"떡국떡","aliases":[],"category":"ETC","searchPriority":116},
-  {"id":"quail_egg","source":"SEED","rawName":"메추리알","displayName":"메추리알","aliases":[],"category":"ETC","searchPriority":117},
-  {"id":"water","source":"SEED","rawName":"생수","displayName":"생수","aliases":["물"],"category":"DRINK","searchPriority":118},
-  {"id":"sparkling_water","source":"SEED","rawName":"탄산수","displayName":"탄산수","aliases":[],"category":"DRINK","searchPriority":119},
-  {"id":"juice","source":"SEED","rawName":"주스","displayName":"주스","aliases":[],"category":"DRINK","searchPriority":120},
-  {"id":"orange_juice","source":"SEED","rawName":"오렌지주스","displayName":"오렌지주스","aliases":[],"category":"DRINK","searchPriority":121},
-  {"id":"apple_juice","source":"SEED","rawName":"사과주스","displayName":"사과주스","aliases":[],"category":"DRINK","searchPriority":122},
-  {"id":"coffee","source":"SEED","rawName":"커피","displayName":"커피","aliases":[],"category":"DRINK","searchPriority":123},
-  {"id":"soy_milk","source":"SEED","rawName":"두유","displayName":"두유","aliases":[],"category":"DRINK","searchPriority":124},
-  {"id":"rice_brown","source":"SEED","rawName":"현미","displayName":"현미","aliases":[],"category":"ETC","searchPriority":125},
-  {"id":"mixed_grain","source":"SEED","rawName":"잡곡","displayName":"잡곡","aliases":[],"category":"ETC","searchPriority":126},
-  {"id":"flour","source":"SEED","rawName":"밀가루","displayName":"밀가루","aliases":[],"category":"ETC","searchPriority":127},
-  {"id":"pancake_mix","source":"SEED","rawName":"부침가루","displayName":"부침가루","aliases":[],"category":"ETC","searchPriority":128},
-  {"id":"tempura_mix","source":"SEED","rawName":"튀김가루","displayName":"튀김가루","aliases":[],"category":"ETC","searchPriority":129},
-  {"id":"pasta","source":"SEED","rawName":"파스타면","displayName":"파스타면","aliases":["스파게티면"],"category":"ETC","searchPriority":130},
-  {"id":"ramen_noodle","source":"SEED","rawName":"라면사리","displayName":"라면사리","aliases":[],"category":"ETC","searchPriority":131},
-  {"id":"udon_noodle","source":"SEED","rawName":"우동면","displayName":"우동면","aliases":[],"category":"ETC","searchPriority":132},
-  {"id":"tortilla","source":"SEED","rawName":"또띠아","displayName":"또띠아","aliases":[],"category":"ETC","searchPriority":133},
-  {"id":"seaweed_laver","source":"SEED","rawName":"김","displayName":"김","aliases":[],"category":"ETC","searchPriority":134},
-  {"id":"seaweed_miyeok","source":"SEED","rawName":"미역","displayName":"미역","aliases":[],"category":"ETC","searchPriority":135},
-  {"id":"glass_noodle","source":"SEED","rawName":"당면","displayName":"당면","aliases":[],"category":"ETC","searchPriority":136},
-  {"id":"tofu_puff","source":"SEED","rawName":"유부","displayName":"유부","aliases":[],"category":"SIDE_DISH","searchPriority":137},
-  {"id":"salad_mix","source":"SEED","rawName":"샐러드채소","displayName":"샐러드채소","aliases":["샐러드"],"category":"VEGETABLE","searchPriority":138},
-  {"id":"olive","source":"SEED","rawName":"올리브","displayName":"올리브","aliases":[],"category":"ETC","searchPriority":139},
-  {"id":"jam","source":"SEED","rawName":"잼","displayName":"잼","aliases":[],"category":"ETC","searchPriority":140},
-  {"id":"pickles","source":"SEED","rawName":"피클","displayName":"피클","aliases":[],"category":"SIDE_DISH","searchPriority":141},
-  {"id":"jelly","source":"SEED","rawName":"묵","displayName":"묵","aliases":[],"category":"SIDE_DISH","searchPriority":142},
-  {"id":"namul","source":"SEED","rawName":"나물","displayName":"나물","aliases":[],"category":"SIDE_DISH","searchPriority":143},
-  {"id":"beans_braised","source":"SEED","rawName":"콩자반","displayName":"콩자반","aliases":[],"category":"SIDE_DISH","searchPriority":144},
-  {"id":"pickled_vegetable","source":"SEED","rawName":"장아찌","displayName":"장아찌","aliases":[],"category":"SIDE_DISH","searchPriority":145},
-  {"id":"boiled_egg","source":"SEED","rawName":"삶은계란","displayName":"삶은계란","aliases":["삶은달걀"],"category":"SIDE_DISH","searchPriority":146},
-  {"id":"half_boiled_egg","source":"SEED","rawName":"반숙란","displayName":"반숙란","aliases":[],"category":"SIDE_DISH","searchPriority":147},
-  {"id":"mochi_cheese_ball","source":"SEED","rawName":"치즈볼","displayName":"치즈볼","aliases":[],"category":"SIDE_DISH","searchPriority":148},
-  {"id":"frozen_berry","source":"SEED","rawName":"냉동블루베리","displayName":"냉동블루베리","aliases":[],"category":"FRUIT","searchPriority":149},
-  {"id":"frozen_mango","source":"SEED","rawName":"냉동망고","displayName":"냉동망고","aliases":[],"category":"FRUIT","searchPriority":150}
+﻿[
+    {
+        "id":  "egg",
+        "source":  "SEED",
+        "rawName":  "계란",
+        "displayName":  "계란",
+        "aliases":  [
+                        "달걀"
+                    ],
+        "category":  "ETC",
+        "searchPriority":  3
+    },
+    {
+        "id":  "milk",
+        "source":  "SEED",
+        "rawName":  "우유",
+        "displayName":  "우유",
+        "aliases":  [
+
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  4
+    },
+    {
+        "id":  "tofu",
+        "source":  "SEED",
+        "rawName":  "두부",
+        "displayName":  "두부",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  10
+    },
+    {
+        "id":  "kimchi",
+        "source":  "SEED",
+        "rawName":  "김치",
+        "displayName":  "김치",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  11
+    },
+    {
+        "id":  "soy_sauce",
+        "source":  "SEED",
+        "rawName":  "간장",
+        "displayName":  "간장",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  19
+    },
+    {
+        "id":  "gochujang",
+        "source":  "SEED",
+        "rawName":  "고추장",
+        "displayName":  "고추장",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  20
+    },
+    {
+        "id":  "doenjang",
+        "source":  "SEED",
+        "rawName":  "된장",
+        "displayName":  "된장",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  21
+    },
+    {
+        "id":  "yogurt",
+        "source":  "SEED",
+        "rawName":  "요거트",
+        "displayName":  "요거트",
+        "aliases":  [
+                        "요구르트"
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  22
+    },
+    {
+        "id":  "cheese",
+        "source":  "SEED",
+        "rawName":  "치즈",
+        "displayName":  "치즈",
+        "aliases":  [
+
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  23
+    },
+    {
+        "id":  "butter",
+        "source":  "SEED",
+        "rawName":  "버터",
+        "displayName":  "버터",
+        "aliases":  [
+
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  24
+    },
+    {
+        "id":  "ham",
+        "source":  "SEED",
+        "rawName":  "햄",
+        "displayName":  "햄",
+        "aliases":  [
+                        "슬라이스햄"
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  25
+    },
+    {
+        "id":  "fishcake",
+        "source":  "SEED",
+        "rawName":  "어묵",
+        "displayName":  "어묵",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  26
+    },
+    {
+        "id":  "bread",
+        "source":  "SEED",
+        "rawName":  "식빵",
+        "displayName":  "식빵",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  27
+    },
+    {
+        "id":  "rice",
+        "source":  "SEED",
+        "rawName":  "쌀",
+        "displayName":  "쌀",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  28
+    },
+    {
+        "id":  "salt",
+        "source":  "SEED",
+        "rawName":  "소금",
+        "displayName":  "소금",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  29
+    },
+    {
+        "id":  "sugar",
+        "source":  "SEED",
+        "rawName":  "설탕",
+        "displayName":  "설탕",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  30
+    },
+    {
+        "id":  "sesame_oil",
+        "source":  "SEED",
+        "rawName":  "참기름",
+        "displayName":  "참기름",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  31
+    },
+    {
+        "id":  "olive_oil",
+        "source":  "SEED",
+        "rawName":  "올리브유",
+        "displayName":  "올리브유",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  32
+    },
+    {
+        "id":  "perilla_oil",
+        "source":  "SEED",
+        "rawName":  "들기름",
+        "displayName":  "들기름",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  33
+    },
+    {
+        "id":  "vinegar",
+        "source":  "SEED",
+        "rawName":  "식초",
+        "displayName":  "식초",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  34
+    },
+    {
+        "id":  "ketchup",
+        "source":  "SEED",
+        "rawName":  "케첩",
+        "displayName":  "케첩",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  35
+    },
+    {
+        "id":  "mayonnaise",
+        "source":  "SEED",
+        "rawName":  "마요네즈",
+        "displayName":  "마요네즈",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  36
+    },
+    {
+        "id":  "ssamjang",
+        "source":  "SEED",
+        "rawName":  "쌈장",
+        "displayName":  "쌈장",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  37
+    },
+    {
+        "id":  "gochugaru",
+        "source":  "SEED",
+        "rawName":  "고춧가루",
+        "displayName":  "고춧가루",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  38
+    },
+    {
+        "id":  "pepper",
+        "source":  "SEED",
+        "rawName":  "후추",
+        "displayName":  "후추",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  39
+    },
+    {
+        "id":  "oyster_sauce",
+        "source":  "SEED",
+        "rawName":  "굴소스",
+        "displayName":  "굴소스",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  40
+    },
+    {
+        "id":  "mirin",
+        "source":  "SEED",
+        "rawName":  "미림",
+        "displayName":  "미림",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  41
+    },
+    {
+        "id":  "cooking_wine",
+        "source":  "SEED",
+        "rawName":  "맛술",
+        "displayName":  "맛술",
+        "aliases":  [
+
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  42
+    },
+    {
+        "id":  "dressing",
+        "source":  "SEED",
+        "rawName":  "샐러드드레싱",
+        "displayName":  "샐러드드레싱",
+        "aliases":  [
+                        "드레싱"
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  43
+    },
+    {
+        "id":  "honey_mustard",
+        "source":  "SEED",
+        "rawName":  "허니머스타드",
+        "displayName":  "허니머스타드",
+        "aliases":  [
+                        "머스타드"
+                    ],
+        "category":  "SAUCE",
+        "searchPriority":  44
+    },
+    {
+        "id":  "greek_yogurt",
+        "source":  "SEED",
+        "rawName":  "그릭요거트",
+        "displayName":  "그릭요거트",
+        "aliases":  [
+
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  84
+    },
+    {
+        "id":  "mozzarella",
+        "source":  "SEED",
+        "rawName":  "모짜렐라치즈",
+        "displayName":  "모짜렐라치즈",
+        "aliases":  [
+                        "모짜렐라"
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  85
+    },
+    {
+        "id":  "cheddar",
+        "source":  "SEED",
+        "rawName":  "체다치즈",
+        "displayName":  "체다치즈",
+        "aliases":  [
+                        "체다"
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  86
+    },
+    {
+        "id":  "cream",
+        "source":  "SEED",
+        "rawName":  "생크림",
+        "displayName":  "생크림",
+        "aliases":  [
+
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  87
+    },
+    {
+        "id":  "cream_cheese",
+        "source":  "SEED",
+        "rawName":  "크림치즈",
+        "displayName":  "크림치즈",
+        "aliases":  [
+
+                    ],
+        "category":  "DAIRY",
+        "searchPriority":  88
+    },
+    {
+        "id":  "soft_tofu",
+        "source":  "SEED",
+        "rawName":  "연두부",
+        "displayName":  "연두부",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  89
+    },
+    {
+        "id":  "bacon",
+        "source":  "SEED",
+        "rawName":  "베이컨",
+        "displayName":  "베이컨",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  90
+    },
+    {
+        "id":  "sausage",
+        "source":  "SEED",
+        "rawName":  "소시지",
+        "displayName":  "소시지",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  91
+    },
+    {
+        "id":  "minced_beef",
+        "source":  "SEED",
+        "rawName":  "다진소고기",
+        "displayName":  "다진소고기",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  94
+    },
+    {
+        "id":  "minced_pork",
+        "source":  "SEED",
+        "rawName":  "다진돼지고기",
+        "displayName":  "다진돼지고기",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  95
+    },
+    {
+        "id":  "beef_bulgogi",
+        "source":  "SEED",
+        "rawName":  "불고기용소고기",
+        "displayName":  "불고기용소고기",
+        "aliases":  [
+                        "불고기소고기"
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  98
+    },
+    {
+        "id":  "pork_bulgogi",
+        "source":  "SEED",
+        "rawName":  "불고기용돼지고기",
+        "displayName":  "불고기용돼지고기",
+        "aliases":  [
+                        "불고기돼지고기"
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  99
+    },
+    {
+        "id":  "shrimp",
+        "source":  "SEED",
+        "rawName":  "새우",
+        "displayName":  "새우",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  100
+    },
+    {
+        "id":  "squid",
+        "source":  "SEED",
+        "rawName":  "오징어",
+        "displayName":  "오징어",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  101
+    },
+    {
+        "id":  "tuna",
+        "source":  "SEED",
+        "rawName":  "참치",
+        "displayName":  "참치",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  104
+    },
+    {
+        "id":  "clam",
+        "source":  "SEED",
+        "rawName":  "조개",
+        "displayName":  "조개",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  107
+    },
+    {
+        "id":  "mussel",
+        "source":  "SEED",
+        "rawName":  "홍합",
+        "displayName":  "홍합",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  109
+    },
+    {
+        "id":  "crab",
+        "source":  "SEED",
+        "rawName":  "게",
+        "displayName":  "게",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  112
+    },
+    {
+        "id":  "dumpling",
+        "source":  "SEED",
+        "rawName":  "만두",
+        "displayName":  "만두",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  114
+    },
+    {
+        "id":  "rice_cake",
+        "source":  "SEED",
+        "rawName":  "떡",
+        "displayName":  "떡",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  115
+    },
+    {
+        "id":  "rice_cake_soup",
+        "source":  "SEED",
+        "rawName":  "떡국떡",
+        "displayName":  "떡국떡",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  116
+    },
+    {
+        "id":  "quail_egg",
+        "source":  "SEED",
+        "rawName":  "메추리알",
+        "displayName":  "메추리알",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  117
+    },
+    {
+        "id":  "water",
+        "source":  "SEED",
+        "rawName":  "생수",
+        "displayName":  "생수",
+        "aliases":  [
+                        "물"
+                    ],
+        "category":  "DRINK",
+        "searchPriority":  118
+    },
+    {
+        "id":  "sparkling_water",
+        "source":  "SEED",
+        "rawName":  "탄산수",
+        "displayName":  "탄산수",
+        "aliases":  [
+
+                    ],
+        "category":  "DRINK",
+        "searchPriority":  119
+    },
+    {
+        "id":  "juice",
+        "source":  "SEED",
+        "rawName":  "주스",
+        "displayName":  "주스",
+        "aliases":  [
+
+                    ],
+        "category":  "DRINK",
+        "searchPriority":  120
+    },
+    {
+        "id":  "orange_juice",
+        "source":  "SEED",
+        "rawName":  "오렌지주스",
+        "displayName":  "오렌지주스",
+        "aliases":  [
+
+                    ],
+        "category":  "DRINK",
+        "searchPriority":  121
+    },
+    {
+        "id":  "apple_juice",
+        "source":  "SEED",
+        "rawName":  "사과주스",
+        "displayName":  "사과주스",
+        "aliases":  [
+
+                    ],
+        "category":  "DRINK",
+        "searchPriority":  122
+    },
+    {
+        "id":  "coffee",
+        "source":  "SEED",
+        "rawName":  "커피",
+        "displayName":  "커피",
+        "aliases":  [
+
+                    ],
+        "category":  "DRINK",
+        "searchPriority":  123
+    },
+    {
+        "id":  "soy_milk",
+        "source":  "SEED",
+        "rawName":  "두유",
+        "displayName":  "두유",
+        "aliases":  [
+
+                    ],
+        "category":  "DRINK",
+        "searchPriority":  124
+    },
+    {
+        "id":  "rice_brown",
+        "source":  "SEED",
+        "rawName":  "현미",
+        "displayName":  "현미",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  125
+    },
+    {
+        "id":  "mixed_grain",
+        "source":  "SEED",
+        "rawName":  "잡곡",
+        "displayName":  "잡곡",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  126
+    },
+    {
+        "id":  "flour",
+        "source":  "SEED",
+        "rawName":  "밀가루",
+        "displayName":  "밀가루",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  127
+    },
+    {
+        "id":  "pancake_mix",
+        "source":  "SEED",
+        "rawName":  "부침가루",
+        "displayName":  "부침가루",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  128
+    },
+    {
+        "id":  "tempura_mix",
+        "source":  "SEED",
+        "rawName":  "튀김가루",
+        "displayName":  "튀김가루",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  129
+    },
+    {
+        "id":  "pasta",
+        "source":  "SEED",
+        "rawName":  "파스타면",
+        "displayName":  "파스타면",
+        "aliases":  [
+                        "스파게티면"
+                    ],
+        "category":  "ETC",
+        "searchPriority":  130
+    },
+    {
+        "id":  "ramen_noodle",
+        "source":  "SEED",
+        "rawName":  "라면사리",
+        "displayName":  "라면사리",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  131
+    },
+    {
+        "id":  "udon_noodle",
+        "source":  "SEED",
+        "rawName":  "우동면",
+        "displayName":  "우동면",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  132
+    },
+    {
+        "id":  "tortilla",
+        "source":  "SEED",
+        "rawName":  "또띠아",
+        "displayName":  "또띠아",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  133
+    },
+    {
+        "id":  "seaweed_laver",
+        "source":  "SEED",
+        "rawName":  "김",
+        "displayName":  "김",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  134
+    },
+    {
+        "id":  "seaweed_miyeok",
+        "source":  "SEED",
+        "rawName":  "미역",
+        "displayName":  "미역",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  135
+    },
+    {
+        "id":  "glass_noodle",
+        "source":  "SEED",
+        "rawName":  "당면",
+        "displayName":  "당면",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  136
+    },
+    {
+        "id":  "tofu_puff",
+        "source":  "SEED",
+        "rawName":  "유부",
+        "displayName":  "유부",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  137
+    },
+    {
+        "id":  "salad_mix",
+        "source":  "SEED",
+        "rawName":  "샐러드채소",
+        "displayName":  "샐러드채소",
+        "aliases":  [
+                        "샐러드"
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  138
+    },
+    {
+        "id":  "olive",
+        "source":  "SEED",
+        "rawName":  "올리브",
+        "displayName":  "올리브",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  139
+    },
+    {
+        "id":  "jam",
+        "source":  "SEED",
+        "rawName":  "잼",
+        "displayName":  "잼",
+        "aliases":  [
+
+                    ],
+        "category":  "ETC",
+        "searchPriority":  140
+    },
+    {
+        "id":  "pickles",
+        "source":  "SEED",
+        "rawName":  "피클",
+        "displayName":  "피클",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  141
+    },
+    {
+        "id":  "jelly",
+        "source":  "SEED",
+        "rawName":  "묵",
+        "displayName":  "묵",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  142
+    },
+    {
+        "id":  "namul",
+        "source":  "SEED",
+        "rawName":  "나물",
+        "displayName":  "나물",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  143
+    },
+    {
+        "id":  "beans_braised",
+        "source":  "SEED",
+        "rawName":  "콩자반",
+        "displayName":  "콩자반",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  144
+    },
+    {
+        "id":  "pickled_vegetable",
+        "source":  "SEED",
+        "rawName":  "장아찌",
+        "displayName":  "장아찌",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  145
+    },
+    {
+        "id":  "boiled_egg",
+        "source":  "SEED",
+        "rawName":  "삶은계란",
+        "displayName":  "삶은계란",
+        "aliases":  [
+                        "삶은달걀"
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  146
+    },
+    {
+        "id":  "half_boiled_egg",
+        "source":  "SEED",
+        "rawName":  "반숙란",
+        "displayName":  "반숙란",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  147
+    },
+    {
+        "id":  "mochi_cheese_ball",
+        "source":  "SEED",
+        "rawName":  "치즈볼",
+        "displayName":  "치즈볼",
+        "aliases":  [
+
+                    ],
+        "category":  "SIDE_DISH",
+        "searchPriority":  148
+    },
+    {
+        "id":  "frozen_berry",
+        "source":  "SEED",
+        "rawName":  "냉동블루베리",
+        "displayName":  "냉동블루베리",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  149
+    },
+    {
+        "id":  "frozen_mango",
+        "source":  "SEED",
+        "rawName":  "냉동망고",
+        "displayName":  "냉동망고",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  150
+    },
+    {
+        "id":  "spinach",
+        "source":  "MFDS",
+        "rawName":  "시금치_생것",
+        "displayName":  "시금치",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  52
+    },
+    {
+        "id":  "cauliflower",
+        "source":  "MFDS",
+        "rawName":  "꽃양배추(콜리플라워)_생것",
+        "displayName":  "콜리플라워",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  51
+    },
+    {
+        "id":  "perilla_leaf",
+        "source":  "MFDS",
+        "rawName":  "들깨_잎_생것",
+        "displayName":  "깻잎",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  54
+    },
+    {
+        "id":  "lettuce",
+        "source":  "MFDS",
+        "rawName":  "상추_아담_청상추_생것",
+        "displayName":  "상추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  53
+    },
+    {
+        "id":  "radish",
+        "source":  "MFDS",
+        "rawName":  "무_조선무_뿌리_생것",
+        "displayName":  "무",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  48
+    },
+    {
+        "id":  "ginger",
+        "source":  "MFDS",
+        "rawName":  "생강_가루",
+        "displayName":  "생강",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  47
+    },
+    {
+        "id":  "broccoli",
+        "source":  "MFDS",
+        "rawName":  "브로콜리_생것",
+        "displayName":  "브로콜리",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  50
+    },
+    {
+        "id":  "napa_cabbage",
+        "source":  "MFDS",
+        "rawName":  "배추_생것",
+        "displayName":  "배추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  49
+    },
+    {
+        "id":  "chili",
+        "source":  "MFDS",
+        "rawName":  "고추_싹_생것",
+        "displayName":  "고추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  60
+    },
+    {
+        "id":  "bell_pepper",
+        "source":  "MFDS",
+        "rawName":  "피망_빨간색_생것",
+        "displayName":  "피망",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  59
+    },
+    {
+        "id":  "oyster_mushroom",
+        "source":  "MFDS",
+        "rawName":  "느타리버섯_생것",
+        "displayName":  "느타리버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  62
+    },
+    {
+        "id":  "cherry_tomato",
+        "source":  "MFDS",
+        "rawName":  "토마토_방울토마토_생것",
+        "displayName":  "방울토마토",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  61
+    },
+    {
+        "id":  "pumpkin",
+        "source":  "MFDS",
+        "rawName":  "호박_단호박_생것",
+        "displayName":  "단호박",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  56
+    },
+    {
+        "id":  "zucchini",
+        "source":  "MFDS",
+        "rawName":  "호박_애호박_생것",
+        "displayName":  "애호박",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  55
+    },
+    {
+        "id":  "paprika",
+        "source":  "MFDS",
+        "rawName":  "파프리카_가루",
+        "displayName":  "파프리카",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  58
+    },
+    {
+        "id":  "eggplant",
+        "source":  "MFDS",
+        "rawName":  "가지_생것",
+        "displayName":  "가지",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  57
+    },
+    {
+        "id":  "cabbage",
+        "source":  "MFDS",
+        "rawName":  "양배추_생것",
+        "displayName":  "양배추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  8
+    },
+    {
+        "id":  "carrot",
+        "source":  "MFDS",
+        "rawName":  "당근_뿌리_생것",
+        "displayName":  "당근",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  7
+    },
+    {
+        "id":  "pork",
+        "source":  "MFDS",
+        "rawName":  "돼지고기_갈비_생것",
+        "displayName":  "돼지고기",
+        "aliases":  [
+                        "돼지"
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  12
+    },
+    {
+        "id":  "cucumber",
+        "source":  "MFDS",
+        "rawName":  "오이_취청_생것",
+        "displayName":  "오이",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  9
+    },
+    {
+        "id":  "green_onion",
+        "source":  "MFDS",
+        "rawName":  "파_대파_생것",
+        "displayName":  "대파",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  2
+    },
+    {
+        "id":  "onion",
+        "source":  "MFDS",
+        "rawName":  "양파_생것",
+        "displayName":  "양파",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  1
+    },
+    {
+        "id":  "potato",
+        "source":  "MFDS",
+        "rawName":  "감자_대지_생것",
+        "displayName":  "감자",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  6
+    },
+    {
+        "id":  "garlic",
+        "source":  "MFDS",
+        "rawName":  "마늘_가루",
+        "displayName":  "마늘",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  5
+    },
+    {
+        "id":  "mushroom_enoki",
+        "source":  "MFDS",
+        "rawName":  "팽이버섯_생것",
+        "displayName":  "팽이버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  18
+    },
+    {
+        "id":  "tomato",
+        "source":  "MFDS",
+        "rawName":  "토마토_생것",
+        "displayName":  "토마토",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  17
+    },
+    {
+        "id":  "scallion",
+        "source":  "MFDS",
+        "rawName":  "파_쪽파_생것",
+        "displayName":  "쪽파",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  46
+    },
+    {
+        "id":  "sweet_potato",
+        "source":  "MFDS",
+        "rawName":  "고구마_생것",
+        "displayName":  "고구마",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  45
+    },
+    {
+        "id":  "chicken",
+        "source":  "MFDS",
+        "rawName":  "닭가슴살 패티",
+        "displayName":  "닭고기",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  14
+    },
+    {
+        "id":  "beef",
+        "source":  "MFDS",
+        "rawName":  "소고기_한우_양지_생것",
+        "displayName":  "소고기",
+        "aliases":  [
+                        "쇠고기"
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  13
+    },
+    {
+        "id":  "banana",
+        "source":  "MFDS",
+        "rawName":  "바나나_생것",
+        "displayName":  "바나나",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  16
+    },
+    {
+        "id":  "apple",
+        "source":  "MFDS",
+        "rawName":  "사과_생것",
+        "displayName":  "사과",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  15
+    },
+    {
+        "id":  "king_oyster_mushroom",
+        "source":  "MFDS",
+        "rawName":  "큰느타리버섯(새송이버섯)_생것",
+        "displayName":  "새송이버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  63
+    },
+    {
+        "id":  "duck",
+        "source":  "MFDS",
+        "rawName":  "오리고기_살코기_생것",
+        "displayName":  "오리고기",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  93
+    },
+    {
+        "id":  "chicken_breast",
+        "source":  "MFDS",
+        "rawName":  "닭고기_가슴(껍질 제거)_생것",
+        "displayName":  "닭가슴살",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  92
+    },
+    {
+        "id":  "pork_neck",
+        "source":  "MFDS",
+        "rawName":  "돼지고기_목심(목심살)_생것",
+        "displayName":  "목살",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  97
+    },
+    {
+        "id":  "pork_belly",
+        "source":  "MFDS",
+        "rawName":  "돼지고기_삼겹살_생것",
+        "displayName":  "삼겹살",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  96
+    },
+    {
+        "id":  "mango",
+        "source":  "MFDS",
+        "rawName":  "망고_생것",
+        "displayName":  "망고",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  81
+    },
+    {
+        "id":  "pineapple",
+        "source":  "MFDS",
+        "rawName":  "파인애플_생것",
+        "displayName":  "파인애플",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  80
+    },
+    {
+        "id":  "persimmon",
+        "source":  "MFDS",
+        "rawName":  "감_단감_생것",
+        "displayName":  "감",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  83
+    },
+    {
+        "id":  "avocado",
+        "source":  "MFDS",
+        "rawName":  "아보카도_생것",
+        "displayName":  "아보카도",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  82
+    },
+    {
+        "id":  "anchovy",
+        "source":  "MFDS",
+        "rawName":  "멸치",
+        "displayName":  "멸치",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  110
+    },
+    {
+        "id":  "littleneck_clam",
+        "source":  "MFDS",
+        "rawName":  "바지락",
+        "displayName":  "바지락",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  108
+    },
+    {
+        "id":  "oyster",
+        "source":  "MFDS",
+        "rawName":  "굴",
+        "displayName":  "굴",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  113
+    },
+    {
+        "id":  "pollack",
+        "source":  "MFDS",
+        "rawName":  "명태",
+        "displayName":  "명태",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  111
+    },
+    {
+        "id":  "salmon",
+        "source":  "MFDS",
+        "rawName":  "연어류,연어,육,생것",
+        "displayName":  "연어",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  103
+    },
+    {
+        "id":  "octopus",
+        "source":  "MFDS",
+        "rawName":  "문어류,문어,육,생것",
+        "displayName":  "문어",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  102
+    },
+    {
+        "id":  "cutlassfish",
+        "source":  "MFDS",
+        "rawName":  "갈치",
+        "displayName":  "갈치",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  106
+    },
+    {
+        "id":  "mackerel",
+        "source":  "MFDS",
+        "rawName":  "고등어",
+        "displayName":  "고등어",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  105
+    },
+    {
+        "id":  "tangerine",
+        "source":  "MFDS",
+        "rawName":  "귤 착즙",
+        "displayName":  "귤",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  69
+    },
+    {
+        "id":  "pear",
+        "source":  "MFDS",
+        "rawName":  "배_생것",
+        "displayName":  "배",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  68
+    },
+    {
+        "id":  "lemon",
+        "source":  "MFDS",
+        "rawName":  "레몬_생것",
+        "displayName":  "레몬",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  71
+    },
+    {
+        "id":  "orange",
+        "source":  "MFDS",
+        "rawName":  "오렌지 착즙",
+        "displayName":  "오렌지",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  70
+    },
+    {
+        "id":  "bean_sprouts",
+        "source":  "MFDS",
+        "rawName":  "콩나물_생것",
+        "displayName":  "콩나물",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  65
+    },
+    {
+        "id":  "shiitake",
+        "source":  "MFDS",
+        "rawName":  "표고버섯_갓_생것",
+        "displayName":  "표고버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  64
+    },
+    {
+        "id":  "corn",
+        "source":  "MFDS",
+        "rawName":  "옥수수_순_생것",
+        "displayName":  "옥수수",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  67
+    },
+    {
+        "id":  "mung_bean_sprouts",
+        "source":  "MFDS",
+        "rawName":  "숙주나물_생것",
+        "displayName":  "숙주",
+        "aliases":  [
+                        "숙주나물"
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  66
+    },
+    {
+        "id":  "plum",
+        "source":  "MFDS",
+        "rawName":  "자두_생것",
+        "displayName":  "자두",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  77
+    },
+    {
+        "id":  "peach",
+        "source":  "MFDS",
+        "rawName":  "복숭아_백도_생것",
+        "displayName":  "복숭아",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  76
+    },
+    {
+        "id":  "melon",
+        "source":  "MFDS",
+        "rawName":  "멜론_감로_생것",
+        "displayName":  "멜론",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  79
+    },
+    {
+        "id":  "watermelon",
+        "source":  "MFDS",
+        "rawName":  "수박_적육질_생것",
+        "displayName":  "수박",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  78
+    },
+    {
+        "id":  "strawberry",
+        "source":  "MFDS",
+        "rawName":  "딸기_설향_생것",
+        "displayName":  "딸기",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  73
+    },
+    {
+        "id":  "grape",
+        "source":  "MFDS",
+        "rawName":  "포도_말린것",
+        "displayName":  "포도",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  72
+    },
+    {
+        "id":  "kiwi",
+        "source":  "MFDS",
+        "rawName":  "키위_골드_생것",
+        "displayName":  "키위",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  75
+    },
+    {
+        "id":  "blueberry",
+        "source":  "MFDS",
+        "rawName":  "블루베리_생것",
+        "displayName":  "블루베리",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  74
+    }
 ]
