@@ -1,0 +1,673 @@
+﻿[
+    {
+        "id":  "onion",
+        "lookupName":  "양파",
+        "displayName":  "양파",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  1
+    },
+    {
+        "id":  "green_onion",
+        "lookupName":  "대파",
+        "displayName":  "대파",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  2
+    },
+    {
+        "id":  "garlic",
+        "lookupName":  "마늘",
+        "displayName":  "마늘",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  5
+    },
+    {
+        "id":  "potato",
+        "lookupName":  "감자",
+        "displayName":  "감자",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  6
+    },
+    {
+        "id":  "carrot",
+        "lookupName":  "당근",
+        "displayName":  "당근",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  7
+    },
+    {
+        "id":  "cabbage",
+        "lookupName":  "양배추",
+        "displayName":  "양배추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  8
+    },
+    {
+        "id":  "cucumber",
+        "lookupName":  "오이",
+        "displayName":  "오이",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  9
+    },
+    {
+        "id":  "pork",
+        "lookupName":  "돼지고기",
+        "displayName":  "돼지고기",
+        "aliases":  [
+                        "돼지"
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  12
+    },
+    {
+        "id":  "beef",
+        "lookupName":  "소고기",
+        "displayName":  "소고기",
+        "aliases":  [
+                        "쇠고기"
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  13
+    },
+    {
+        "id":  "chicken",
+        "lookupName":  "닭고기",
+        "displayName":  "닭고기",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  14
+    },
+    {
+        "id":  "apple",
+        "lookupName":  "사과",
+        "displayName":  "사과",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  15
+    },
+    {
+        "id":  "banana",
+        "lookupName":  "바나나",
+        "displayName":  "바나나",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  16
+    },
+    {
+        "id":  "tomato",
+        "lookupName":  "토마토",
+        "displayName":  "토마토",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  17
+    },
+    {
+        "id":  "mushroom_enoki",
+        "lookupName":  "팽이버섯",
+        "displayName":  "팽이버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  18
+    },
+    {
+        "id":  "sweet_potato",
+        "lookupName":  "고구마",
+        "displayName":  "고구마",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  45
+    },
+    {
+        "id":  "scallion",
+        "lookupName":  "쪽파",
+        "displayName":  "쪽파",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  46
+    },
+    {
+        "id":  "ginger",
+        "lookupName":  "생강",
+        "displayName":  "생강",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  47
+    },
+    {
+        "id":  "radish",
+        "lookupName":  "무",
+        "displayName":  "무",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  48
+    },
+    {
+        "id":  "napa_cabbage",
+        "lookupName":  "배추",
+        "displayName":  "배추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  49
+    },
+    {
+        "id":  "broccoli",
+        "lookupName":  "브로콜리",
+        "displayName":  "브로콜리",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  50
+    },
+    {
+        "id":  "cauliflower",
+        "lookupName":  "콜리플라워",
+        "displayName":  "콜리플라워",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  51,
+        "lookupAliases":  [
+                              "꽃양배추(콜리플라워)"
+                          ]
+    },
+    {
+        "id":  "spinach",
+        "lookupName":  "시금치",
+        "displayName":  "시금치",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  52
+    },
+    {
+        "id":  "lettuce",
+        "lookupName":  "상추",
+        "displayName":  "상추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  53
+    },
+    {
+        "id":  "perilla_leaf",
+        "lookupName":  "깻잎",
+        "displayName":  "깻잎",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  54,
+        "lookupAliases":  [
+                              "들깨_잎_생것"
+                          ]
+    },
+    {
+        "id":  "zucchini",
+        "lookupName":  "애호박",
+        "displayName":  "애호박",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  55
+    },
+    {
+        "id":  "pumpkin",
+        "lookupName":  "단호박",
+        "displayName":  "단호박",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  56
+    },
+    {
+        "id":  "eggplant",
+        "lookupName":  "가지",
+        "displayName":  "가지",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  57
+    },
+    {
+        "id":  "paprika",
+        "lookupName":  "파프리카",
+        "displayName":  "파프리카",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  58
+    },
+    {
+        "id":  "bell_pepper",
+        "lookupName":  "피망",
+        "displayName":  "피망",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  59
+    },
+    {
+        "id":  "chili",
+        "lookupName":  "고추",
+        "displayName":  "고추",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  60
+    },
+    {
+        "id":  "cherry_tomato",
+        "lookupName":  "방울토마토",
+        "displayName":  "방울토마토",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  61
+    },
+    {
+        "id":  "oyster_mushroom",
+        "lookupName":  "느타리버섯",
+        "displayName":  "느타리버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  62
+    },
+    {
+        "id":  "king_oyster_mushroom",
+        "lookupName":  "새송이버섯",
+        "displayName":  "새송이버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  63,
+        "lookupAliases":  [
+                              "큰느타리버섯(새송이버섯)"
+                          ]
+    },
+    {
+        "id":  "shiitake",
+        "lookupName":  "표고버섯",
+        "displayName":  "표고버섯",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  64
+    },
+    {
+        "id":  "bean_sprouts",
+        "lookupName":  "콩나물",
+        "displayName":  "콩나물",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  65
+    },
+    {
+        "id":  "mung_bean_sprouts",
+        "lookupName":  "숙주",
+        "displayName":  "숙주",
+        "aliases":  [
+                        "숙주나물"
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  66
+    },
+    {
+        "id":  "corn",
+        "lookupName":  "옥수수",
+        "displayName":  "옥수수",
+        "aliases":  [
+
+                    ],
+        "category":  "VEGETABLE",
+        "searchPriority":  67
+    },
+    {
+        "id":  "pear",
+        "lookupName":  "배",
+        "displayName":  "배",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  68
+    },
+    {
+        "id":  "tangerine",
+        "lookupName":  "귤",
+        "displayName":  "귤",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  69
+    },
+    {
+        "id":  "orange",
+        "lookupName":  "오렌지",
+        "displayName":  "오렌지",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  70
+    },
+    {
+        "id":  "lemon",
+        "lookupName":  "레몬",
+        "displayName":  "레몬",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  71
+    },
+    {
+        "id":  "grape",
+        "lookupName":  "포도",
+        "displayName":  "포도",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  72
+    },
+    {
+        "id":  "strawberry",
+        "lookupName":  "딸기",
+        "displayName":  "딸기",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  73
+    },
+    {
+        "id":  "blueberry",
+        "lookupName":  "블루베리",
+        "displayName":  "블루베리",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  74
+    },
+    {
+        "id":  "kiwi",
+        "lookupName":  "키위",
+        "displayName":  "키위",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  75
+    },
+    {
+        "id":  "peach",
+        "lookupName":  "복숭아",
+        "displayName":  "복숭아",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  76
+    },
+    {
+        "id":  "plum",
+        "lookupName":  "자두",
+        "displayName":  "자두",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  77
+    },
+    {
+        "id":  "watermelon",
+        "lookupName":  "수박",
+        "displayName":  "수박",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  78
+    },
+    {
+        "id":  "melon",
+        "lookupName":  "멜론",
+        "displayName":  "멜론",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  79
+    },
+    {
+        "id":  "pineapple",
+        "lookupName":  "파인애플",
+        "displayName":  "파인애플",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  80
+    },
+    {
+        "id":  "mango",
+        "lookupName":  "망고",
+        "displayName":  "망고",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  81
+    },
+    {
+        "id":  "avocado",
+        "lookupName":  "아보카도",
+        "displayName":  "아보카도",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  82
+    },
+    {
+        "id":  "persimmon",
+        "lookupName":  "감",
+        "displayName":  "감",
+        "aliases":  [
+
+                    ],
+        "category":  "FRUIT",
+        "searchPriority":  83
+    },
+    {
+        "id":  "chicken_breast",
+        "lookupName":  "닭가슴살",
+        "displayName":  "닭가슴살",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  92,
+        "lookupAliases":  [
+                              "닭고기_가슴(껍질 제거)_생것"
+                          ]
+    },
+    {
+        "id":  "duck",
+        "lookupName":  "오리고기",
+        "displayName":  "오리고기",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  93
+    },
+    {
+        "id":  "pork_belly",
+        "lookupName":  "삼겹살",
+        "displayName":  "삼겹살",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  96
+    },
+    {
+        "id":  "pork_neck",
+        "lookupName":  "목살",
+        "displayName":  "목살",
+        "aliases":  [
+
+                    ],
+        "category":  "MEAT",
+        "searchPriority":  97,
+        "lookupAliases":  [
+                              "목심(목심살)"
+                          ]
+    },
+    {
+        "id":  "octopus",
+        "lookupName":  "문어",
+        "displayName":  "문어",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  102,
+        "lookupAliases":  [
+                              "문어류,문어,육,생것"
+                          ]
+    },
+    {
+        "id":  "salmon",
+        "lookupName":  "연어",
+        "displayName":  "연어",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  103,
+        "lookupAliases":  [
+                              "연어류,연어,전체,생것,수입"
+                          ]
+    },
+    {
+        "id":  "mackerel",
+        "lookupName":  "고등어",
+        "displayName":  "고등어",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  105
+    },
+    {
+        "id":  "cutlassfish",
+        "lookupName":  "갈치",
+        "displayName":  "갈치",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  106
+    },
+    {
+        "id":  "littleneck_clam",
+        "lookupName":  "바지락",
+        "displayName":  "바지락",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  108
+    },
+    {
+        "id":  "anchovy",
+        "lookupName":  "멸치",
+        "displayName":  "멸치",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  110
+    },
+    {
+        "id":  "pollack",
+        "lookupName":  "명태",
+        "displayName":  "명태",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  111
+    },
+    {
+        "id":  "oyster",
+        "lookupName":  "굴",
+        "displayName":  "굴",
+        "aliases":  [
+
+                    ],
+        "category":  "SEAFOOD",
+        "searchPriority":  113
+    }
+]

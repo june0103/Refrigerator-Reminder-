@@ -8,7 +8,6 @@ import com.management.refrigeratorreminder.domain.StatusCalculator
 import com.management.refrigeratorreminder.domain.model.FreshnessStatus
 import com.management.refrigeratorreminder.domain.model.ItemCategory
 import com.management.refrigeratorreminder.domain.model.StorageType
-import com.management.refrigeratorreminder.ui.model.ListSortOption
 import com.management.refrigeratorreminder.ui.model.PantryItemPresentation
 import com.management.refrigeratorreminder.ui.model.StatusFilterOption
 import com.management.refrigeratorreminder.ui.model.toPresentation
@@ -20,7 +19,6 @@ import kotlinx.coroutines.flow.stateIn
 
 data class ListUiState(
     val query: String = "",
-    val sortOption: ListSortOption = ListSortOption.EXPIRY_ASC,
     val categoryFilter: ItemCategory? = null,
     val storageFilter: StorageType? = null,
     val statusFilter: StatusFilterOption = StatusFilterOption.ACTIVE,
@@ -34,21 +32,18 @@ class ListViewModel(
     settingsRepository: SettingsRepository,
 ) : ViewModel() {
     private val query = MutableStateFlow("")
-    private val sortOption = MutableStateFlow(ListSortOption.EXPIRY_ASC)
     private val categoryFilter = MutableStateFlow<ItemCategory?>(null)
     private val storageFilter = MutableStateFlow<StorageType?>(null)
     private val statusFilter = MutableStateFlow(StatusFilterOption.ACTIVE)
 
     private val filterState = combine(
         query,
-        sortOption,
         categoryFilter,
         storageFilter,
         statusFilter,
-    ) { searchQuery, sort, category, storage, status ->
+    ) { searchQuery, category, storage, status ->
         FilterState(
             searchQuery = searchQuery,
-            sort = sort,
             category = category,
             storage = storage,
             status = status,
@@ -69,11 +64,10 @@ class ListViewModel(
                 (filters.category == null || presentation.category == filters.category) &&
                 (filters.storage == null || presentation.storageType == filters.storage) &&
                 matchesStatus(presentation.freshnessStatus, filters.status)
-        }.sortedWith(sortComparator(filters.sort))
+        }.sortedWith(defaultComparator())
 
         ListUiState(
             query = filters.searchQuery,
-            sortOption = filters.sort,
             categoryFilter = filters.category,
             storageFilter = filters.storage,
             statusFilter = filters.status,
@@ -89,10 +83,6 @@ class ListViewModel(
         query.value = value
     }
 
-    fun setSortOption(value: ListSortOption) {
-        sortOption.value = value
-    }
-
     fun setCategoryFilter(value: ItemCategory?) {
         categoryFilter.value = value
     }
@@ -103,6 +93,13 @@ class ListViewModel(
 
     fun setStatusFilter(value: StatusFilterOption) {
         statusFilter.value = value
+    }
+
+    fun resetFilters() {
+        query.value = ""
+        categoryFilter.value = null
+        storageFilter.value = null
+        statusFilter.value = StatusFilterOption.ACTIVE
     }
 
     private fun matchesStatus(
@@ -119,13 +116,14 @@ class ListViewModel(
         StatusFilterOption.DISCARDED -> status == FreshnessStatus.DISCARDED
     }
 
-    private fun sortComparator(option: ListSortOption): Comparator<PantryItemPresentation> = when (option) {
-        ListSortOption.EXPIRY_ASC -> compareBy<PantryItemPresentation> { severity(it.freshnessStatus) }
-            .thenBy { it.expiryDate }
-            .thenBy { it.name }
-
-        ListSortOption.NAME_ASC -> compareBy { it.name }
-        ListSortOption.CREATED_DESC -> compareByDescending<PantryItemPresentation> { it.createdAt }.thenBy { it.name }
+    private fun defaultComparator(): Comparator<PantryItemPresentation> = compareBy<PantryItemPresentation> {
+        severity(it.freshnessStatus)
+    }.thenBy {
+        it.expiryDate
+    }.thenByDescending {
+        it.createdAt
+    }.thenBy {
+        it.name
     }
 
     private fun severity(status: FreshnessStatus): Int = when (status) {
@@ -149,7 +147,6 @@ class ListViewModel(
 
     private data class FilterState(
         val searchQuery: String,
-        val sort: ListSortOption,
         val category: ItemCategory?,
         val storage: StorageType?,
         val status: StatusFilterOption,

@@ -69,6 +69,7 @@
     <string name="button_delete">삭제</string>
     <string name="button_manage">관리</string>
     <string name="button_undo">실행 취소</string>
+    <string name="button_reset_filters">초기화</string>
 
     <string name="settings_notification_title">만료 임박 알림</string>
     <string name="settings_notification_desc">하루 한 번 기한이 지난 식재료와 임박한 항목을 요약해서 알려줍니다.</string>

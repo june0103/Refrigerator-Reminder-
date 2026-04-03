@@ -20,12 +20,6 @@ data class PantryItemPresentation(
     val createdAt: LocalDateTime,
 )
 
-enum class ListSortOption {
-    EXPIRY_ASC,
-    NAME_ASC,
-    CREATED_DESC,
-}
-
 enum class StatusFilterOption {
     ALL,
     ACTIVE,

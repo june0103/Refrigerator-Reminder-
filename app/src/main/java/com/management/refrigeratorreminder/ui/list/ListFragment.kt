@@ -1,9 +1,11 @@
 package com.management.refrigeratorreminder.ui.list
 
+import android.content.res.ColorStateList
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.PopupMenu
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
@@ -14,6 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.management.refrigeratorreminder.R
 import com.management.refrigeratorreminder.RefrigeratorReminderApp
@@ -23,7 +26,6 @@ import com.management.refrigeratorreminder.domain.model.StorageType
 import com.management.refrigeratorreminder.ui.common.PantryItemAdapter
 import com.management.refrigeratorreminder.ui.common.SimpleViewModelFactory
 import com.management.refrigeratorreminder.ui.home.HomeFragment
-import com.management.refrigeratorreminder.ui.model.ListSortOption
 import com.management.refrigeratorreminder.ui.model.PantryItemPresentation
 import com.management.refrigeratorreminder.ui.model.StatusFilterOption
 import kotlinx.coroutines.launch
@@ -54,10 +56,8 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         )
     }
 
-    private lateinit var sortOptions: List<Pair<String, ListSortOption>>
     private lateinit var categoryOptions: List<Pair<String, ItemCategory?>>
     private lateinit var storageOptions: List<Pair<String, StorageType?>>
-    private lateinit var statusOptions: List<Pair<String, StatusFilterOption>>
     private var rendering = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -67,27 +67,12 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         binding.recyclerItems.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerItems.adapter = adapter
 
-        sortOptions = listOf(
-            getString(R.string.sort_expiry) to ListSortOption.EXPIRY_ASC,
-            getString(R.string.sort_name) to ListSortOption.NAME_ASC,
-            getString(R.string.sort_created) to ListSortOption.CREATED_DESC,
-        )
         categoryOptions = listOf(getString(R.string.filter_all) to null) +
             ItemCategory.values().map { getString(it.labelRes) to it }
         storageOptions = listOf(getString(R.string.filter_all) to null) +
             StorageType.values().map { getString(it.labelRes) to it }
-        statusOptions = listOf(
-            getString(R.string.status_filter_active) to StatusFilterOption.ACTIVE,
-            getString(R.string.status_filter_all) to StatusFilterOption.ALL,
-            getString(R.string.status_filter_expired) to StatusFilterOption.EXPIRED,
-            getString(R.string.status_filter_today) to StatusFilterOption.TODAY,
-            getString(R.string.status_filter_soon) to StatusFilterOption.SOON,
-            getString(R.string.status_filter_safe) to StatusFilterOption.SAFE,
-            getString(R.string.status_filter_consumed) to StatusFilterOption.CONSUMED,
-            getString(R.string.status_filter_discarded) to StatusFilterOption.DISCARDED,
-        )
 
-        setupDropdowns()
+        setupFilterBar()
 
         binding.editSearch.doOnTextChanged { text, _, _, _ ->
             if (!rendering) {
@@ -102,10 +87,24 @@ class ListFragment : Fragment(R.layout.fragment_list) {
                     if (binding.editSearch.text?.toString() != state.query) {
                         binding.editSearch.setText(state.query)
                     }
-                    binding.dropdownSort.setText(sortOptions.first { it.second == state.sortOption }.first, false)
-                    binding.dropdownCategory.setText(categoryOptions.first { it.second == state.categoryFilter }.first, false)
-                    binding.dropdownStorage.setText(storageOptions.first { it.second == state.storageFilter }.first, false)
-                    binding.dropdownStatus.setText(statusOptions.first { it.second == state.statusFilter }.first, false)
+                    renderStatusFilter(state.statusFilter)
+                    renderFilterButton(
+                        button = binding.buttonStorageFilter,
+                        label = getString(R.string.label_storage),
+                        value = storageOptions.first { it.second == state.storageFilter }.first,
+                        active = state.storageFilter != null,
+                    )
+                    renderFilterButton(
+                        button = binding.buttonCategoryFilter,
+                        label = getString(R.string.label_category),
+                        value = categoryOptions.first { it.second == state.categoryFilter }.first,
+                        active = state.categoryFilter != null,
+                    )
+                    val hasCustomFilters = state.query.isNotBlank() ||
+                        state.categoryFilter != null ||
+                        state.storageFilter != null ||
+                        state.statusFilter != StatusFilterOption.ACTIVE
+                    binding.buttonResetFilters.isVisible = hasCustomFilters
                     rendering = false
 
                     adapter.submitList(state.items)
@@ -116,26 +115,81 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         }
     }
 
-    private fun setupDropdowns() {
-        binding.dropdownSort.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, sortOptions.map { it.first }))
-        binding.dropdownSort.setOnItemClickListener { _, _, position, _ ->
-            if (!rendering) viewModel.setSortOption(sortOptions[position].second)
+    private fun setupFilterBar() {
+        binding.groupStatus.setOnCheckedStateChangeListener { _, checkedIds ->
+            if (rendering) return@setOnCheckedStateChangeListener
+
+            val selectedFilter = when (checkedIds.firstOrNull()) {
+                R.id.chip_status_expired -> StatusFilterOption.EXPIRED
+                R.id.chip_status_all -> StatusFilterOption.ALL
+                else -> StatusFilterOption.ACTIVE
+            }
+            viewModel.setStatusFilter(selectedFilter)
         }
 
-        binding.dropdownCategory.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, categoryOptions.map { it.first }))
-        binding.dropdownCategory.setOnItemClickListener { _, _, position, _ ->
-            if (!rendering) viewModel.setCategoryFilter(categoryOptions[position].second)
+        binding.buttonStorageFilter.setOnClickListener { anchor ->
+            showFilterMenu(anchor, storageOptions, viewModel.uiState.value.storageFilter) { selected ->
+                viewModel.setStorageFilter(selected)
+            }
         }
 
-        binding.dropdownStorage.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, storageOptions.map { it.first }))
-        binding.dropdownStorage.setOnItemClickListener { _, _, position, _ ->
-            if (!rendering) viewModel.setStorageFilter(storageOptions[position].second)
+        binding.buttonCategoryFilter.setOnClickListener { anchor ->
+            showFilterMenu(anchor, categoryOptions, viewModel.uiState.value.categoryFilter) { selected ->
+                viewModel.setCategoryFilter(selected)
+            }
         }
 
-        binding.dropdownStatus.setAdapter(ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, statusOptions.map { it.first }))
-        binding.dropdownStatus.setOnItemClickListener { _, _, position, _ ->
-            if (!rendering) viewModel.setStatusFilter(statusOptions[position].second)
+        binding.buttonResetFilters.setOnClickListener {
+            if (!rendering) {
+                viewModel.resetFilters()
+            }
         }
+    }
+
+    private fun renderStatusFilter(filterOption: StatusFilterOption) {
+        val checkedId = when (filterOption) {
+            StatusFilterOption.EXPIRED -> R.id.chip_status_expired
+            StatusFilterOption.ALL -> R.id.chip_status_all
+            else -> R.id.chip_status_active
+        }
+        binding.groupStatus.check(checkedId)
+    }
+
+    private fun renderFilterButton(
+        button: MaterialButton,
+        label: String,
+        value: String,
+        active: Boolean,
+    ) {
+        button.text = "$label: $value"
+
+        val backgroundColor = if (active) R.color.brand_primary_container else R.color.brand_surface
+        val textColor = if (active) R.color.brand_on_primary_container else R.color.brand_on_surface
+        val strokeColor = if (active) R.color.brand_primary else R.color.brand_outline
+
+        button.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(requireContext(), backgroundColor))
+        button.setTextColor(ContextCompat.getColor(requireContext(), textColor))
+        button.strokeColor = ColorStateList.valueOf(ContextCompat.getColor(requireContext(), strokeColor))
+    }
+
+    private fun <T> showFilterMenu(
+        anchor: View,
+        options: List<Pair<String, T>>,
+        selectedValue: T,
+        onSelected: (T) -> Unit,
+    ) {
+        PopupMenu(requireContext(), anchor).apply {
+            options.forEachIndexed { index, (label, value) ->
+                val title = if (value == selectedValue) "\u2713 $label" else label
+                menu.add(Menu.NONE, index, index, title)
+            }
+            setOnMenuItemClickListener { item ->
+                if (!rendering) {
+                    onSelected(options[item.itemId].second)
+                }
+                true
+            }
+        }.show()
     }
 
     private fun showActionsMenu(item: PantryItemPresentation, anchor: View) {

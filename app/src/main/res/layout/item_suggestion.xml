@@ -15,6 +15,21 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
+        <FrameLayout
+            android:id="@+id/layout_ingredient_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_ingredient_icon_container"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/image_ingredient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"

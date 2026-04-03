@@ -23,6 +23,25 @@
     <color name="status_done_fg">#7A8894</color>
     <color name="status_done_bg">#EEF2F5</color>
 
+    <color name="icon_vegetable_fg">#2F9E44</color>
+    <color name="icon_vegetable_bg">#EAF7EE</color>
+    <color name="icon_fruit_fg">#E67700</color>
+    <color name="icon_fruit_bg">#FFF1E0</color>
+    <color name="icon_dairy_fg">#1C7ED6</color>
+    <color name="icon_dairy_bg">#E7F3FF</color>
+    <color name="icon_meat_fg">#C92A2A</color>
+    <color name="icon_meat_bg">#FDECEC</color>
+    <color name="icon_seafood_fg">#0B7285</color>
+    <color name="icon_seafood_bg">#E6F7FA</color>
+    <color name="icon_drink_fg">#1971C2</color>
+    <color name="icon_drink_bg">#EAF4FF</color>
+    <color name="icon_side_dish_fg">#9C6B30</color>
+    <color name="icon_side_dish_bg">#FBF2E8</color>
+    <color name="icon_sauce_fg">#B3541E</color>
+    <color name="icon_sauce_bg">#FFF0E7</color>
+    <color name="icon_etc_fg">#5F6B76</color>
+    <color name="icon_etc_bg">#EEF2F5</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

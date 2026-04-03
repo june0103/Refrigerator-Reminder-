@@ -1,7 +1,9 @@
 package com.management.refrigeratorreminder.ui.common
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -42,6 +44,19 @@ class IngredientSuggestionAdapter(
                     -> context.getString(R.string.suggestion_source_default)
                 }
             }
+            binding.imageIngredient.setImageResource(
+                IngredientVisuals.suggestionIconRes(
+                    name = item.displayName,
+                    category = item.category,
+                    directAdd = item.isDirectAdd,
+                ),
+            )
+            binding.imageIngredient.imageTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(context, IngredientVisuals.ingredientTintRes(item.category)),
+            )
+            binding.layoutIngredientIcon.backgroundTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(context, IngredientVisuals.ingredientBackgroundRes(item.category)),
+            )
             binding.root.setOnClickListener { onSuggestionClick(item) }
         }
     }

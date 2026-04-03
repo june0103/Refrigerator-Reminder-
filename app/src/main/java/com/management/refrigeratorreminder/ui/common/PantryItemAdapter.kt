@@ -3,6 +3,7 @@ package com.management.refrigeratorreminder.ui.common
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.content.res.ColorStateList
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -41,6 +42,17 @@ class PantryItemAdapter(
             binding.textDays.text = UiFormatter.formatDays(context, item.freshnessStatus, item.daysUntilExpiry)
             binding.chipStatus.text = context.getString(item.freshnessStatus.labelRes)
             binding.buttonAction.visibility = if (showActions) View.VISIBLE else View.GONE
+            binding.imageIngredient.setImageResource(IngredientVisuals.ingredientIconRes(item.name, item.category))
+            binding.imageIngredient.imageTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(context, IngredientVisuals.ingredientTintRes(item.category)),
+            )
+            binding.layoutIngredientIcon.backgroundTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(context, IngredientVisuals.ingredientBackgroundRes(item.category)),
+            )
+            binding.imageRisk.setImageResource(IngredientVisuals.riskIconRes(item.freshnessStatus))
+            binding.imageRisk.imageTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(context, IngredientVisuals.riskTintRes(item.freshnessStatus)),
+            )
             val (bgColor, fgColor) = statusColors(item.freshnessStatus)
             binding.chipStatus.chipBackgroundColor = ContextCompat.getColorStateList(context, bgColor)
             binding.chipStatus.setTextColor(ContextCompat.getColor(context, fgColor))
