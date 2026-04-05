@@ -11,12 +11,15 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.management.refrigeratorreminder.R
 import com.management.refrigeratorreminder.RefrigeratorReminderApp
 import com.management.refrigeratorreminder.databinding.FragmentHomeBinding
 import com.management.refrigeratorreminder.domain.model.StorageType
+import com.management.refrigeratorreminder.ui.common.PantryItemDetailBottomSheet
 import com.management.refrigeratorreminder.ui.common.PantryItemAdapter
 import com.management.refrigeratorreminder.ui.common.SimpleViewModelFactory
+import com.management.refrigeratorreminder.ui.model.PantryItemPresentation
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -33,12 +36,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val adapter by lazy {
         PantryItemAdapter(
             showActions = false,
-            onItemClick = { item ->
-                findNavController().navigate(
-                    R.id.editItemFragment,
-                    bundleOf(EditItemArgumentKey to item.itemId),
-                )
-            },
+            onItemClick = { item -> showItemDetail(item) },
             onActionClick = { _, _ -> },
         )
     }
@@ -49,6 +47,38 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding.recyclerHome.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerHome.adapter = adapter
+        childFragmentManager.setFragmentResultListener(
+            PantryItemDetailBottomSheet.REQUEST_KEY,
+            viewLifecycleOwner,
+        ) { _, bundle ->
+            when (bundle.getString(PantryItemDetailBottomSheet.RESULT_ACTION)) {
+                PantryItemDetailBottomSheet.ACTION_EDIT -> {
+                    val itemId = bundle.getString(PantryItemDetailBottomSheet.RESULT_ITEM_ID).orEmpty()
+                    findNavController().navigate(
+                        R.id.editItemFragment,
+                        bundleOf(EditItemArgumentKey to itemId),
+                    )
+                }
+
+                PantryItemDetailBottomSheet.ACTION_CONSUME -> {
+                    handleSheetMutation(bundle, R.string.message_item_consumed) { itemId ->
+                        viewModel.markConsumed(itemId)
+                    }
+                }
+
+                PantryItemDetailBottomSheet.ACTION_DISCARD -> {
+                    handleSheetMutation(bundle, R.string.message_item_discarded) { itemId ->
+                        viewModel.markDiscarded(itemId)
+                    }
+                }
+
+                PantryItemDetailBottomSheet.ACTION_DELETE -> {
+                    handleSheetMutation(bundle, R.string.message_item_deleted) { itemId ->
+                        viewModel.deleteItem(itemId)
+                    }
+                }
+            }
+        }
         binding.buttonEmptyAdd.setOnClickListener {
             findNavController().navigate(R.id.addItemFragment)
         }
@@ -68,6 +98,38 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     binding.recyclerHome.isVisible = !state.isEmpty
                 }
             }
+        }
+    }
+
+    private fun showItemDetail(item: PantryItemPresentation) {
+        if (childFragmentManager.findFragmentByTag(PantryItemDetailBottomSheet.TAG) != null) return
+        PantryItemDetailBottomSheet.newInstance(item)
+            .show(childFragmentManager, PantryItemDetailBottomSheet.TAG)
+    }
+
+    private fun handleSheetMutation(
+        result: Bundle,
+        messageResId: Int,
+        action: suspend (String) -> com.management.refrigeratorreminder.data.local.entity.PantryItemEntity?,
+    ) {
+        val itemId = result.getString(PantryItemDetailBottomSheet.RESULT_ITEM_ID).orEmpty()
+        if (itemId.isBlank()) return
+        mutateWithUndo(messageResId) { action(itemId) }
+    }
+
+    private fun mutateWithUndo(
+        messageResId: Int,
+        action: suspend () -> com.management.refrigeratorreminder.data.local.entity.PantryItemEntity?,
+    ) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            val previous = action() ?: return@launch
+            Snackbar.make(binding.root, messageResId, Snackbar.LENGTH_LONG)
+                .setAction(R.string.button_undo) {
+                    viewLifecycleOwner.lifecycleScope.launch {
+                        viewModel.restoreItem(previous)
+                    }
+                }
+                .show()
         }
     }
 

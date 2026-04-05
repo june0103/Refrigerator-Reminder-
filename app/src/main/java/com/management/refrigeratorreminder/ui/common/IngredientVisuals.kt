@@ -87,6 +87,28 @@ object IngredientVisuals {
     }
 
     @ColorRes
+    fun statusForegroundRes(status: FreshnessStatus): Int = when (status) {
+        FreshnessStatus.EXPIRED -> R.color.status_expired_fg
+        FreshnessStatus.TODAY -> R.color.status_today_fg
+        FreshnessStatus.SOON -> R.color.status_soon_fg
+        FreshnessStatus.SAFE -> R.color.status_safe_fg
+        FreshnessStatus.CONSUMED,
+        FreshnessStatus.DISCARDED,
+        -> R.color.status_done_fg
+    }
+
+    @ColorRes
+    fun statusBackgroundRes(status: FreshnessStatus): Int = when (status) {
+        FreshnessStatus.EXPIRED -> R.color.status_expired_bg
+        FreshnessStatus.TODAY -> R.color.status_today_bg
+        FreshnessStatus.SOON -> R.color.status_soon_bg
+        FreshnessStatus.SAFE -> R.color.status_safe_bg
+        FreshnessStatus.CONSUMED,
+        FreshnessStatus.DISCARDED,
+        -> R.color.status_done_bg
+    }
+
+    @ColorRes
     fun ingredientTintRes(category: ItemCategory): Int = when (category) {
         ItemCategory.VEGETABLE -> R.color.icon_vegetable_fg
         ItemCategory.FRUIT -> R.color.icon_fruit_fg

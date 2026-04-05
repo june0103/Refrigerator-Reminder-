@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.management.refrigeratorreminder.R
 import com.management.refrigeratorreminder.databinding.ItemPantryBinding
-import com.management.refrigeratorreminder.domain.model.FreshnessStatus
 import com.management.refrigeratorreminder.ui.model.PantryItemPresentation
 
 class PantryItemAdapter(
@@ -53,22 +52,16 @@ class PantryItemAdapter(
             binding.imageRisk.imageTintList = ColorStateList.valueOf(
                 ContextCompat.getColor(context, IngredientVisuals.riskTintRes(item.freshnessStatus)),
             )
-            val (bgColor, fgColor) = statusColors(item.freshnessStatus)
-            binding.chipStatus.chipBackgroundColor = ContextCompat.getColorStateList(context, bgColor)
-            binding.chipStatus.setTextColor(ContextCompat.getColor(context, fgColor))
+            binding.chipStatus.chipBackgroundColor = ContextCompat.getColorStateList(
+                context,
+                IngredientVisuals.statusBackgroundRes(item.freshnessStatus),
+            )
+            binding.chipStatus.setTextColor(
+                ContextCompat.getColor(context, IngredientVisuals.statusForegroundRes(item.freshnessStatus)),
+            )
             binding.root.setOnClickListener { onItemClick(item) }
             binding.buttonAction.setOnClickListener { onActionClick(item, it) }
         }
-    }
-
-    private fun statusColors(status: FreshnessStatus): Pair<Int, Int> = when (status) {
-        FreshnessStatus.EXPIRED -> R.color.status_expired_bg to R.color.status_expired_fg
-        FreshnessStatus.TODAY -> R.color.status_today_bg to R.color.status_today_fg
-        FreshnessStatus.SOON -> R.color.status_soon_bg to R.color.status_soon_fg
-        FreshnessStatus.SAFE -> R.color.status_safe_bg to R.color.status_safe_fg
-        FreshnessStatus.CONSUMED,
-        FreshnessStatus.DISCARDED,
-        -> R.color.status_done_bg to R.color.status_done_fg
     }
 
     private object DiffCallback : DiffUtil.ItemCallback<PantryItemPresentation>() {

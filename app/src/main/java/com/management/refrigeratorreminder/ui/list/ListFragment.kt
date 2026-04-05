@@ -23,6 +23,7 @@ import com.management.refrigeratorreminder.RefrigeratorReminderApp
 import com.management.refrigeratorreminder.databinding.FragmentListBinding
 import com.management.refrigeratorreminder.domain.model.ItemCategory
 import com.management.refrigeratorreminder.domain.model.StorageType
+import com.management.refrigeratorreminder.ui.common.PantryItemDetailBottomSheet
 import com.management.refrigeratorreminder.ui.common.PantryItemAdapter
 import com.management.refrigeratorreminder.ui.common.SimpleViewModelFactory
 import com.management.refrigeratorreminder.ui.home.HomeFragment
@@ -44,15 +45,8 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     private val adapter by lazy {
         PantryItemAdapter(
             showActions = true,
-            onItemClick = { item ->
-                findNavController().navigate(
-                    R.id.editItemFragment,
-                    bundleOf(HomeFragment.EditItemArgumentKey to item.itemId),
-                )
-            },
-            onActionClick = { item, anchor ->
-                showActionsMenu(item, anchor)
-            },
+            onItemClick = { item -> showItemDetail(item) },
+            onActionClick = { item, _ -> showItemDetail(item) },
         )
     }
 
@@ -66,6 +60,38 @@ class ListFragment : Fragment(R.layout.fragment_list) {
 
         binding.recyclerItems.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerItems.adapter = adapter
+        childFragmentManager.setFragmentResultListener(
+            PantryItemDetailBottomSheet.REQUEST_KEY,
+            viewLifecycleOwner,
+        ) { _, bundle ->
+            when (bundle.getString(PantryItemDetailBottomSheet.RESULT_ACTION)) {
+                PantryItemDetailBottomSheet.ACTION_EDIT -> {
+                    val itemId = bundle.getString(PantryItemDetailBottomSheet.RESULT_ITEM_ID).orEmpty()
+                    findNavController().navigate(
+                        R.id.editItemFragment,
+                        bundleOf(HomeFragment.EditItemArgumentKey to itemId),
+                    )
+                }
+
+                PantryItemDetailBottomSheet.ACTION_CONSUME -> {
+                    handleSheetMutation(bundle, R.string.message_item_consumed) { itemId ->
+                        viewModel.markConsumed(itemId)
+                    }
+                }
+
+                PantryItemDetailBottomSheet.ACTION_DISCARD -> {
+                    handleSheetMutation(bundle, R.string.message_item_discarded) { itemId ->
+                        viewModel.markDiscarded(itemId)
+                    }
+                }
+
+                PantryItemDetailBottomSheet.ACTION_DELETE -> {
+                    handleSheetMutation(bundle, R.string.message_item_deleted) { itemId ->
+                        viewModel.deleteItem(itemId)
+                    }
+                }
+            }
+        }
 
         categoryOptions = listOf(getString(R.string.filter_all) to null) +
             ItemCategory.values().map { getString(it.labelRes) to it }
@@ -192,42 +218,13 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         }.show()
     }
 
-    private fun showActionsMenu(item: PantryItemPresentation, anchor: View) {
-        PopupMenu(requireContext(), anchor).apply {
-            inflate(R.menu.item_actions_menu)
-            setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.action_edit -> {
-                        findNavController().navigate(
-                            R.id.editItemFragment,
-                            bundleOf(HomeFragment.EditItemArgumentKey to item.itemId),
-                        )
-                        true
-                    }
-
-                    R.id.action_consume -> {
-                        mutateWithUndo(item.itemId, R.string.message_item_consumed) { viewModel.markConsumed(item.itemId) }
-                        true
-                    }
-
-                    R.id.action_discard -> {
-                        mutateWithUndo(item.itemId, R.string.message_item_discarded) { viewModel.markDiscarded(item.itemId) }
-                        true
-                    }
-
-                    R.id.action_delete -> {
-                        mutateWithUndo(item.itemId, R.string.message_item_deleted) { viewModel.deleteItem(item.itemId) }
-                        true
-                    }
-
-                    else -> false
-                }
-            }
-        }.show()
+    private fun showItemDetail(item: PantryItemPresentation) {
+        if (childFragmentManager.findFragmentByTag(PantryItemDetailBottomSheet.TAG) != null) return
+        PantryItemDetailBottomSheet.newInstance(item)
+            .show(childFragmentManager, PantryItemDetailBottomSheet.TAG)
     }
 
     private fun mutateWithUndo(
-        itemId: String,
         messageResId: Int,
         action: suspend () -> com.management.refrigeratorreminder.data.local.entity.PantryItemEntity?,
     ) {
@@ -241,6 +238,16 @@ class ListFragment : Fragment(R.layout.fragment_list) {
                 }
                 .show()
         }
+    }
+
+    private fun handleSheetMutation(
+        result: Bundle,
+        messageResId: Int,
+        action: suspend (String) -> com.management.refrigeratorreminder.data.local.entity.PantryItemEntity?,
+    ) {
+        val itemId = result.getString(PantryItemDetailBottomSheet.RESULT_ITEM_ID).orEmpty()
+        if (itemId.isBlank()) return
+        mutateWithUndo(messageResId) { action(itemId) }
     }
 
     override fun onDestroyView() {

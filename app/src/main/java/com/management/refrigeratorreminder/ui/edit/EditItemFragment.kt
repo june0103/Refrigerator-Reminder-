@@ -120,7 +120,7 @@ class EditItemFragment : Fragment(R.layout.fragment_edit_item) {
                             }
                             EditItemEvent.ItemSaved -> {
                                 Snackbar.make(binding.root, R.string.message_item_saved, Snackbar.LENGTH_SHORT).show()
-                                if (!findNavController().popBackStack(R.id.homeFragment, false)) {
+                                if (!findNavController().popBackStack()) {
                                     findNavController().navigate(R.id.homeFragment)
                                 }
                             }

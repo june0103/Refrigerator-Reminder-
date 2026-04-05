@@ -25,7 +25,7 @@ data class HomeUiState(
 }
 
 class HomeViewModel(
-    pantryRepository: PantryRepository,
+    private val pantryRepository: PantryRepository,
     settingsRepository: SettingsRepository,
 ) : ViewModel() {
     private val selectedStorageType = MutableStateFlow<StorageType?>(null)
@@ -70,6 +70,16 @@ class HomeViewModel(
 
     fun setStorageFilter(storageType: StorageType?) {
         selectedStorageType.value = storageType
+    }
+
+    suspend fun markConsumed(itemId: String) = pantryRepository.markConsumed(itemId)
+
+    suspend fun markDiscarded(itemId: String) = pantryRepository.markDiscarded(itemId)
+
+    suspend fun deleteItem(itemId: String) = pantryRepository.deleteItem(itemId)
+
+    suspend fun restoreItem(item: com.management.refrigeratorreminder.data.local.entity.PantryItemEntity) {
+        pantryRepository.restoreItem(item)
     }
 
     private fun severity(status: FreshnessStatus): Int = when (status) {
