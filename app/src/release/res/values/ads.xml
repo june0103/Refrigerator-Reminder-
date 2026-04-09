@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admob_app_id">ca-app-pub-7394989706935409~5360479403</string>
+    <string name="admob_banner_unit_id">ca-app-pub-7394989706935409/8731289333</string>
+    <string name="admob_environment_name">release_live</string>
+</resources>
