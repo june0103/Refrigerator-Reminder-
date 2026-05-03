@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "com.management.refrigeratorreminder"
+    namespace = "com.mist.refrigeratorreminder"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.management.refrigeratorreminder"
+        applicationId = "com.mist.refrigeratorreminder"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.google.play.services.ads)
+    implementation(libs.google.user.messaging.platform)
     ksp(libs.androidx.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

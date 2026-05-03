@@ -6,26 +6,26 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.management.refrigeratorreminder.ui.home.HomeFragment"
+        android:name="com.mist.refrigeratorreminder.ui.home.HomeFragment"
         android:label="@string/title_home" />
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.management.refrigeratorreminder.ui.list.ListFragment"
+        android:name="com.mist.refrigeratorreminder.ui.list.ListFragment"
         android:label="@string/title_list" />
 
     <fragment
         android:id="@+id/addItemFragment"
-        android:name="com.management.refrigeratorreminder.ui.edit.EditItemFragment"
+        android:name="com.mist.refrigeratorreminder.ui.edit.EditItemFragment"
         android:label="@string/title_add" />
 
     <fragment
         android:id="@+id/editItemFragment"
-        android:name="com.management.refrigeratorreminder.ui.edit.EditItemFragment"
+        android:name="com.mist.refrigeratorreminder.ui.edit.EditItemFragment"
         android:label="@string/action_edit" />
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.management.refrigeratorreminder.ui.settings.SettingsFragment"
+        android:name="com.mist.refrigeratorreminder.ui.settings.SettingsFragment"
         android:label="@string/title_settings" />
 </navigation>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="ump_force_debug_eea">true</bool>
+    <string name="ump_test_device_hashed_id"></string>
+</resources>
