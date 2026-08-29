@@ -7,6 +7,7 @@ import com.mist.refrigeratorreminder.domain.model.ItemCategory
 import com.mist.refrigeratorreminder.domain.model.StorageType
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 object UiFormatter {
     private val dateFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd")
@@ -43,5 +44,5 @@ object UiFormatter {
         return parts.joinToString(" · ")
     }
 
-    fun formatReminderTime(hour: Int, minute: Int): String = String.format("%02d:%02d", hour, minute)
+    fun formatReminderTime(hour: Int, minute: Int): String = String.format(Locale.ROOT, "%02d:%02d", hour, minute)
 }

@@ -14,3 +14,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+/release_assets/
+/app/release/
+/keystore.properties
+*.jks
+*.keystore
